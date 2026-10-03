@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualisasi Pengeluaran &amp; Anggaran</title>
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    
+    <main class="app">
+        <header class="topbar">
+            <h1>Pengeluaran Harian</h1>
+            <button id="theme-toggle" class="icon-btn" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+        </header>
+
+        <!-- Total Saldo -->
+         <section class="card balance">
+            <p class="label">Total Saldo</p>
+            <p id="total-balance" class="amount">Rp 0</p>
+         </section>
+    </main>
 </body>
 </html>
