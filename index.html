@@ -55,6 +55,22 @@
       </div>
     </section>
 
+
+
+    <!-- Daftar Transaksi -->
+    <section class="card">
+      <div class="list-header">
+        <h2>Daftar Transaksi</h2>
+        <select id="sort-select" aria-label="Urutkan transaksi">
+          <option value="newest">Terbaru</option>
+          <option value="amount-desc">Jumlah tertinggi</option>
+          <option value="amount-asc">Jumlah terendah</option>
+          <option value="category">Kategori (A-Z)</option>
+        </select>
+      </div>
+      <ul id="transaction-list" class="list"></ul>
+      <p id="list-empty" class="empty">Belum ada transaksi.</p>
+    </section>    
     </main>
 </body>
 </html>
