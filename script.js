@@ -74,3 +74,79 @@ function renderCategories() {
     categories.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
   if (categories.includes(current)) categorySelect.value = current;
 }
+
+function getSorted() {
+  const list = [...transactions];
+  switch (sortSelect.value) {
+    case 'amount-desc': return list.sort((a, b) => b.amount - a.amount);
+    case 'amount-asc': return list.sort((a, b) => a.amount - b.amount);
+    case 'category': return list.sort((a, b) => a.category.localeCompare(b.category));
+    default: return list.sort((a, b) => b.id - a.id); // terbaru
+  }
+}
+
+function renderList() {
+  const items = getSorted();
+  listEl.innerHTML = items.map(t => `
+    <li>
+      <div class="item-info">
+        <p class="item-name">${escapeHtml(t.name)}</p>
+        <p class="item-cat"><span class="dot" style="background:${getCategoryColor(t.category)}"></span>${escapeHtml(t.category)}</p>
+      </div>
+      <div class="item-right">
+        <strong>${formatRupiah(t.amount)}</strong>
+        <button class="delete-btn" type="button" data-id="${t.id}" aria-label="Hapus ${escapeHtml(t.name)}">Hapus</button>
+      </div>
+    </li>`).join('');
+  listEmpty.classList.toggle('hidden', items.length > 0);
+}
+
+function renderBalance() {
+  const total = transactions.reduce((sum, t) => sum + t.amount, 0);
+  totalEl.textContent = formatRupiah(total);
+}
+
+function renderChart() {
+  const totals = {};
+  transactions.forEach(t => { totals[t.category] = (totals[t.category] || 0) + t.amount; });
+  const labels = Object.keys(totals);
+  const data = Object.values(totals);
+  const hasData = labels.length > 0;
+
+  chartCanvas.classList.toggle('hidden', !hasData);
+  chartEmpty.classList.toggle('hidden', hasData);
+
+  if (!hasData) {
+    if (chart) { chart.destroy(); chart = null; }
+    return;
+  }
+
+  const colors = labels.map(getCategoryColor);
+  const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
+
+  if (chart) {
+    chart.data.labels = labels;
+    chart.data.datasets[0].data = data;
+    chart.data.datasets[0].backgroundColor = colors;
+    chart.options.plugins.legend.labels.color = textColor;
+    chart.update();
+  } else {
+    chart = new Chart(chartCanvas, {
+      type: 'pie',
+      data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0 }] },
+      options: {
+        plugins: {
+          legend: { position: 'bottom', labels: { color: textColor, usePointStyle: true } },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${formatRupiah(ctx.parsed)}` } }
+        }
+      }
+    });
+  }
+}
+
+function render() {
+  renderBalance();
+  renderList();
+  renderChart();
+}
+
