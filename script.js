@@ -46,3 +46,14 @@ function load(key, fallback) {
 function save(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
+
+// ===== Util =====
+function formatRupiah(n) {
+  return 'Rp ' + Number(n).toLocaleString('id-ID');
+}
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
