@@ -57,3 +57,12 @@ function escapeHtml(s) {
   d.textContent = s;
   return d.innerHTML;
 }
+
+// Warna unik per kategori (tetap sama di grafik dan daftar)
+function getCategoryColor(category) {
+  const fixed = CATEGORY_COLORS[category.toLowerCase()];
+  if (fixed) return fixed;
+  const customs = categories.filter(c => !CATEGORY_COLORS[c.toLowerCase()]);
+  const i = Math.max(customs.indexOf(category), 0);
+  return EXTRA_COLORS[i % EXTRA_COLORS.length];
+}
