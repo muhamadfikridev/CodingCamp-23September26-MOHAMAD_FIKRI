@@ -150,3 +150,36 @@ function render() {
   renderChart();
 }
 
+
+// ===== Aksi =====
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = nameInput.value.trim();
+  const amount = Number(amountInput.value);
+  const category = categorySelect.value;
+
+  if (!name || !amountInput.value || !category) {
+    errorEl.textContent = 'Semua kolom harus diisi.';
+    return;
+  }
+  if (!(amount > 0)) {
+    errorEl.textContent = 'Jumlah harus lebih dari 0.';
+    return;
+  }
+
+  errorEl.textContent = '';
+  transactions.push({ id: Date.now(), name, amount, category });
+  save(KEYS.tx, transactions);
+  form.reset();
+  render();
+});
+
+listEl.addEventListener('click', e => {
+  const btn = e.target.closest('.delete-btn');
+  if (!btn) return;
+  transactions = transactions.filter(t => t.id !== Number(btn.dataset.id));
+  save(KEYS.tx, transactions);
+  render();
+});
+
+sortSelect.addEventListener('change', renderList);
