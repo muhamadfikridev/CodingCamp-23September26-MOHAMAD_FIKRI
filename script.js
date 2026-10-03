@@ -66,3 +66,11 @@ function getCategoryColor(category) {
   const i = Math.max(customs.indexOf(category), 0);
   return EXTRA_COLORS[i % EXTRA_COLORS.length];
 }
+
+// ===== Render =====
+function renderCategories() {
+  const current = categorySelect.value;
+  categorySelect.innerHTML = '<option value="">Pilih kategori</option>' +
+    categories.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  if (categories.includes(current)) categorySelect.value = current;
+}
