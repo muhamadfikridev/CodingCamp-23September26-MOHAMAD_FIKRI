@@ -18,6 +18,25 @@
             <p class="label">Total Saldo</p>
             <p id="total-balance" class="amount">Rp 0</p>
          </section>
+
+         <!-- Formulir Input -->
+    <section class="card">
+      <h2>Tambah Transaksi</h2>
+      <form id="transaction-form" novalidate>
+        <label for="item-name">Nama Item</label>
+        <input id="item-name" type="text" placeholder="Contoh: Nasi goreng" autocomplete="off">
+
+        <label for="item-amount">Jumlah (Rp)</label>
+        <input id="item-amount" type="number" min="1" inputmode="numeric" placeholder="Contoh: 15000">
+
+        <label for="item-category">Kategori</label>
+        <select id="item-category"></select>
+
+        <p id="form-error" class="error" role="alert"></p>
+        <button type="submit" class="btn">Tambah</button>
+      </form>
+
+
     </main>
 </body>
 </html>
