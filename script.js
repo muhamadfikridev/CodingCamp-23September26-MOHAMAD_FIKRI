@@ -32,3 +32,17 @@ const chartEmpty = document.getElementById('chart-empty');
 const chartCanvas = document.getElementById('expense-chart');
 const themeBtn = document.getElementById('theme-toggle');
 const newCategoryInput = document.getElementById('new-category');
+
+
+// ===== Local Storage =====
+function load(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+function save(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
