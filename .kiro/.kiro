@@ -1,0 +1,60 @@
+## Batasan Teknis
+TC-1: Tumpukan Teknologi
+HTML untuk struktur
+CSS untuk penataan gaya
+JavaScript Vanilla (tanpa framework seperti React, Vue, dll.)
+Tidak diperlukan server backend
+
+
+## TC-2: Penyimpanan Data
+Gunakan API Local Storage browser
+Semua data disimpan hanya di sisi klien
+
+
+## TC-3: Kompatibilitas Browser
+Harus berfungsi di browser modern (Chrome, Firefox, Edge, Safari)
+Dapat digunakan sebagai aplikasi web mandiri atau ekstensi browser
+
+
+## Persyaratan Non-Fungsional
+NFR-1: Kesederhanaan
+Antarmuka yang bersih dan minimal
+Mudah dipahami dan digunakan
+Tidak diperlukan pengaturan yang rumit
+Tidak diperlukan pengaturan pengujian
+
+
+## NFR-2: Kinerja
+Waktu muat yang cepat
+Interaksi UI yang responsif
+Tidak ada jeda yang terlihat saat memperbarui data
+
+
+## NFR-3: Desain Visual
+Estetika yang ramah pengguna
+Hierarki visual yang jelas
+Tipografi yang mudah dibaca
+
+⚠️ ## Aturan Folder
+Hanya 1 file CSS di dalam css/
+Hanya 1 file JavaScript di dalam js/
+Jaga kode tetap bersih dan mudah dibaca
+
+⚠️ ## GitHub & Deployment (Hanya Git dasar yang diperlukan)
+Gunakan GitHub Desktop untuk menyimpan pekerjaan Anda
+Push kode Anda ke GitHub
+Publikasikan situs menggunakan GitHub Pages
+
+⚠️ ## Tantangan Opsional (Pilih 3)
+Pilih 3 dari 5 opsi ini untuk membuat proyek Anda lebih interaktif dan ramah pengguna:
+Izinkan pengguna menambahkan kategori kustom
+Tambahkan tampilan ringkasan bulanan
+Urutkan transaksi berdasarkan jumlah atau kategori
+Sorot pengeluaran yang melebihi batas yang ditetapkan
+Tombol mode gelap/terang
+
+⚠️ ## Pengumpulan
+Setelah menyelesaikan situs web Anda, unggah Kode Sumber di Repositori Github Anda dan publikasikan situs web di Github Pages
+Kirimkan AWS Builder ID Anda (pastikan di proyek Anda terdapat folder .kiro), URL Repo Github, dan situs web yang dipublikasikan melalui pengiriman Paperform khusus yang akan dibuka pada hari Kamis
+
+Penting: Jika Anda tidak mengirimkan semua tautan yang diperlukan di Paperform, pengiriman Anda tidak akan valid.
