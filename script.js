@@ -9,3 +9,11 @@ const CATEGORY_COLORS = {
   'hiburan': '#ff7a00',      // oranye
   'minuman': '#8e44ad'       // ungu
 };
+
+
+// Warna cadangan untuk kategori kustom lain
+const EXTRA_COLORS = ['#e63946', '#f1c40f', '#16a085', '#e84393', '#795548', '#2c3e50', '#a3cb38', '#7f8c8d'];
+
+let transactions = load(KEYS.tx, []);
+let categories = load(KEYS.cat, DEFAULT_CATEGORIES);
+let chart = null;
