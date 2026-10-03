@@ -1,0 +1,22 @@
+/* ===== Tema ===== */
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7785;
+  --border: #e2e6ea;
+  --accent: #2f6fed;
+  --accent-text: #ffffff;
+  --danger: #d64545;
+}
+[data-theme="dark"] {
+  --bg: #14171c;
+  --card: #1e232a;
+  --text: #e8ebef;
+  --muted: #98a2ae;
+  --border: #2d343d;
+  --accent: #5b8def;
+  --accent-text: #0e1116;
+  --danger: #ef6b6b;
+}
+ 
