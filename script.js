@@ -201,3 +201,17 @@ document.getElementById('add-category').addEventListener('click', () => {
   renderCategories();
   categorySelect.value = value;
 });
+
+
+// Mode gelap/terang
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  save(KEYS.theme, theme);
+  if (chart) { chart.destroy(); chart = null; renderChart(); }
+}
+themeBtn.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+});
+
