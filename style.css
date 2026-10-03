@@ -46,3 +46,44 @@ h2 { font-size: 1rem; margin: 0 0 12px; }
 /* ===== Total Saldo ===== */
 .balance .label { margin: 0; color: var(--muted); font-size: 0.875rem; }
 .balance .amount { margin: 4px 0 0; font-size: 2rem; font-weight: 700; }
+
+/* ===== Formulir ===== */
+label { display: block; font-size: 0.875rem; color: var(--muted); margin: 10px 0 4px; }
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.9; }
+.btn-light { width: auto; margin: 0; padding: 10px 14px; background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.error { min-height: 1.2em; margin: 8px 0 0; color: var(--danger); font-size: 0.875rem; }
+
+.custom-category { margin-top: 16px; padding-top: 6px; border-top: 1px solid var(--border); }
+.row { display: flex; gap: 8px; }
+
+.icon-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
