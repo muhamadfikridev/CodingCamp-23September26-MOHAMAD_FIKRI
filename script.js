@@ -183,3 +183,21 @@ listEl.addEventListener('click', e => {
 });
 
 sortSelect.addEventListener('change', renderList);
+
+
+// Kategori kustom
+document.getElementById('add-category').addEventListener('click', () => {
+  const value = newCategoryInput.value.trim();
+  if (!value) return;
+  const exists = categories.some(c => c.toLowerCase() === value.toLowerCase());
+  if (exists) {
+    errorEl.textContent = 'Kategori sudah ada.';
+    return;
+  }
+  errorEl.textContent = '';
+  categories.push(value);
+  save(KEYS.cat, categories);
+  newCategoryInput.value = '';
+  renderCategories();
+  categorySelect.value = value;
+});
