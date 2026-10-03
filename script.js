@@ -215,3 +215,8 @@ themeBtn.addEventListener('click', () => {
   applyTheme(next);
 });
 
+
+// ===== Inisialisasi =====
+applyTheme(load(KEYS.theme, 'light'));
+renderCategories();
+render();
